@@ -27,7 +27,7 @@ module.exports = {
 };
 ```
 
-- The `cursorBlink` is automatically set to true.
+- The `cursorBlink` option is automatically set to true.
 - No CSS is required but it is possible to e.g. adjust the transition ease.
 - It looks like the blink interval delay is set to `600ms` and not adjustable.
 https://github.com/xtermjs/xterm.js/blob/master/src/renderer/CursorRenderLayer.ts#L22
