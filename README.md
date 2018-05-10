@@ -1,13 +1,10 @@
 # `hyper-cursorfade`
 > Adds an opacity fade-in/fade-out animation to the cursor blink.
 
-This plugin is a complete hack and very ugly so I won't publish to NPM. It animates the opacity on `canvas.xterm-cursor-layer` which makes it appear that the cursor fades in and fades out instead of blinking, without affecting anything else xTerm renders. Ideally, any animation should be done via the canvas context and not on the canvas element itself.
+This plugin is a complete hack and very ugly so I won't publish to NPM. It animates the opacity on `canvas.xterm-cursor-layer` which makes the cursor appear to fade in and fade out instead of blink, without affecting anything else xTerm renders. Ideally, any terminal animation should be done inside of [`xTerm`](https://github.com/xtermjs/xterm.js/), not a hyper plugin.
 
 ## Usage
-All you have to do is add this repo path to the list of plugins. No CSS is required but it is possible to e.g. adjust the transition ease.
-
-It looks like the blink interval delay is set to `600ms` and not adjustable.
-https://github.com/xtermjs/xterm.js/blob/master/src/renderer/CursorRenderLayer.ts#L22
+Since this isn't on NPM, you have to clone the repo and add it inside of `.hyper_plugins/local/`. Then add it to the list of `localPlugins`.
 
 ```js
 /* .hyper.js */
@@ -23,9 +20,14 @@ module.exports = {
     }
     `
   },
-  plugins: [
+  localPlugins: [
     // ...
-    'https://github.com/slammayjammay/hyper-cursorfade'
+    'hyper-cursorfade'
   ]
 };
 ```
+
+- The `cursorBlink` is automatically set to true.
+- No CSS is required but it is possible to e.g. adjust the transition ease.
+- It looks like the blink interval delay is set to `600ms` and not adjustable.
+https://github.com/xtermjs/xterm.js/blob/master/src/renderer/CursorRenderLayer.ts#L22

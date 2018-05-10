@@ -2,7 +2,7 @@
   "name": "hyper-cursorfade",
   "version": "1.0.0",
   "description": "Adds an opacity fade-in/fade-out animation to the cursor blink.",
-  "main": "dist/built.js",
+  "main": "lib/built.js",
   "scripts": {
     "build": "webpack",
     "prepare": "npm run build"
