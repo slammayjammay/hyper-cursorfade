@@ -4,7 +4,8 @@
   "description": "Adds an opacity fade-in/fade-out animation to the cursor blink.",
   "main": "dist/built.js",
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "prepare": "npm run build"
   },
   "keywords": [
     "hyper",
