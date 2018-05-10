@@ -128,6 +128,7 @@ exports.decorateTerm = (Term, { React }) => {
 // css
 exports.decorateConfig = (config) => {
 	return Object.assign({}, config, {
+		cursorBlink: true,
 		css: `
 		.xterm-cursor-layer {
 			opacity: 1;
